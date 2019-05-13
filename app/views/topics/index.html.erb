@@ -30,8 +30,8 @@
             <%= topic.description %>
           </p>
           <h3>コメント</h3>
-          <% topic.comments.each do |comment| %>
-            <p><%= comment.comment %></p>
+          <%= link_to comments_path(topic_id: topic.id),method: :get,class: 'btn btn-primary' do %>
+          コメント一覧へ
           <% end %>
         </div>
       </div>

@@ -14,6 +14,10 @@ class CommentsController < ApplicationController
     end
   end
   
+  def index 
+    @comments = Comment.where(topic_id:params[:topic_id])
+  end
+  
  private
   def comment_params
     params.require(:comment).permit(:comment, :topic_id)
